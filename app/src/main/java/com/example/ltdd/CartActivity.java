@@ -79,11 +79,6 @@ public class CartActivity extends AppCompatActivity {
         btnCheckout.setEnabled(!empty);
     }
 
-    // Thanh toán: hỏi xác nhận -> lưu đơn hàng vào SQLite -> xoá giỏ
-    private void checkout() {
-        long subtotal = Cart.getTotal();
-        long total = subtotal - subtotal * percent / 100;
-
         new MaterialAlertDialogBuilder(this)
                 .setTitle("Xác nhận đặt hàng")
                 .setMessage("Tổng thanh toán: " + Utils.formatPrice(total))
